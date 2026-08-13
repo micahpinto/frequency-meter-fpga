@@ -1,0 +1,23 @@
+=== Data Formatter Test ===
+
+Test 1: 2,000,000 Hz
+  Display:  0 2 0 0
+  Unit: 10 (10=MHz), Decimal Position:Before 2 digits (10)
+
+Test 2: 5,542 Hz
+  Display:  0 5 5 4
+  Unit: 01 (01=KHz), Decimal Position:Before 2 digits (10)
+
+Test 3: 2 Hz
+  Display:  0 0 0 2
+  Unit: 00 (00=Hz), Decimal Position:Before 2 digits (10)
+
+Test 4: 3,500 Hz
+  Display:  0 3 5 0
+  Unit: 01 (01=KHz), Decimal Position:Before 2 digits (10)
+
+Test 5: 50,485 Hz
+  Display:  5 0 4 8
+  Unit: 01 (01=KHz), Decimal Position:Before 2 digits (10)
+
+ Test Complete
