@@ -1,0 +1,16 @@
+=== Edge Detector Test ===
+
+Test 1: Rising edge (0 -> 1)
+  -> Edge #          1 detected at time                  225 ns
+Test 2: Falling edge - should NOT trigger
+Test 3: Another rising edge
+  -> Edge #          2 detected at time                  425 ns
+Test 4: Multiple edges
+  -> Edge #          3 detected at time                  625 ns
+  -> Edge #          4 detected at time                  825 ns
+
+ Results
+Total edges detected:           4
+Expected: 4 rising edges
+
+TEST PASSED
