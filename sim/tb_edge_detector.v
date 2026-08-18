@@ -41,29 +41,28 @@ module tb_edge_detector;
         $display("Test 1: Rising edge (0 -> 1)");
         #100;
         signal_in = 1;
-        #100
+        #100;
         
         // Test Case 2: Falling edge (1 -> 0) - should NOT detect
         $display("Test 2: Falling edge - should NOT trigger");
         signal_in = 0;
-        #100
+        #100;
         
         // Test Case 3: Another rising edge
         $display("Test 3: Another rising edge");
         signal_in = 1;
-        #100
+        #100;
         
         // Test Case 4: Multiple quick edges
         $display("Test 4: Multiple edges");
         signal_in = 0;
-        #100
+        #100;
         signal_in = 1;
-        #100
+        #100;
         signal_in = 0;
-        #100
+        #100;
         signal_in = 1;
-        #100
-        
+        #100;
         // Print results
         $display("\n Results");
         $display("Total edges detected: %d", edge_count);
@@ -74,9 +73,9 @@ module tb_edge_detector;
         end else begin
             $display("TEST FAILED\n");
         end
-        
+        100;
+        $finish;
     end
-    
     // Monitor for edge pulses
     always @(posedge clk_100mhz) begin
         if (edge_pulse) begin
@@ -84,6 +83,4 @@ module tb_edge_detector;
             $display("  -> Edge #%d detected at time %d ns", edge_count, $time);
         end
     end
-   
-
-endmodule
+ endmodule
