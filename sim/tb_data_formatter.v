@@ -1,25 +1,3 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: Micah Pinto
-// 
-// Create Date: 11.04.2024 21:14:56
-// Design Name: 
-// Module Name: tb_data_formatter
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 `timescale 1ns / 1ns
 
 module tb_data_formatter;
@@ -57,36 +35,41 @@ module tb_data_formatter;
         $display("\n=== Data Formatter Test ===\n");
        
       $display("Test 1: 2,000,000 Hz");
-        frequency = 2000000;
+        frequency = 32'h02000000;
         #100;
         $display("  Display: %d%d%d%d", digit3, digit2, digit1, digit0);
-      $display("  Unit: %b (10=MHz), Decimal Position:Before 2 digits (%b)\n", unit, decimal_position);
+     $display("  Expected: 2000, unit 10 (MHz), decimal after digit 3");
+$display("  Got: unit %b, decimal %d\n", unit, decimal_position);
        
       $display("Test 2: 5,542 Hz");
-        frequency = 5542;
+        frequency = 32'h00005542;
         #100;
         $display("  Display: %d%d%d%d", digit3, digit2, digit1, digit0);
-      $display("  Unit: %b (01=KHz), Decimal Position:Before 2 digits (%b)\n", unit, decimal_position);
+       $display("  Expected: 5542, unit 01 (kHz), decimal after digit 3");
+        $display("  Got: unit %b, decimal %d\n", unit, decimal_position);
        
         $display("Test 3: 2 Hz");
-        frequency = 2;
+       frequency = 32'h00000002;
         #100;
         $display("  Display: %d%d%d%d", digit3, digit2, digit1, digit0);
-      $display("  Unit: %b (00=Hz), Decimal Position:Before 2 digits (%b)\n", unit, decimal_position);
+      $display("  Expected: 0002, unit 00 (Hz), no decimal");
+        $display("  Got: unit %b, decimal %d\n", unit, decimal_position);
        
       $display("Test 4: 3,500 Hz");
-        frequency = 3500;
+      frequency = 32'h00003500;
         #100;
         $display("  Display: %d%d%d%d", digit3, digit2, digit1, digit0);
-      $display("  Unit: %b (01=KHz), Decimal Position:Before 2 digits (%b)\n", unit, decimal_position);
+      $display("  Expected: 3500, unit 01 (kHz), decimal after digit 3");
+        $display("  Got: unit %b, decimal %d\n", unit, decimal_position);
        
       $display("Test 5: 50,485 Hz");
-        frequency = 50485;
+        frequency = 32'h00050485;
         #100;
         $display("  Display: %d%d%d%d", digit3, digit2, digit1, digit0);
-      $display("  Unit: %b (01=KHz), Decimal Position:Before 2 digits (%b)\n", unit, decimal_position);
+       $display("  Expected: 5048, unit 01 (kHz), decimal after digit 2");
+        $display("  Got: unit %b, decimal %d\n", unit, decimal_position);
        
-        $display(" Test Complete\n");
+        $display(" Test Completed\n");
         $finish;
     end
 
