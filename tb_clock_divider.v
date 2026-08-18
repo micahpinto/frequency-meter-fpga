@@ -28,7 +28,7 @@ module tb_clock_divider;
         #100;
         reset = 0;
         // Run simulation for 100 million clock cycles (1 second)
-        repeat(100_000_000) begin
+           repeat(210_000_000) begin
             @(posedge clk_100mhz);
                         if (clk_1hz !== prev_clk_1hz) begin  // Check if clk_1hz has changed (edge detected)
                 toggle_count = toggle_count + 1;
@@ -37,7 +37,7 @@ module tb_clock_divider;
             end
         end
         
-        $display("Total toggles: %d", toggle_count);
+               $display("Total toggles in 2.1 s: %d (expected 2)", toggle_count);
         $finish;
     end
 
