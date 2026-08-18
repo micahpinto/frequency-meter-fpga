@@ -1,22 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-
-// By: Micah Pinto
-// Module Name: bcd_counter
-// Project Name: frequency_meter
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-//////////////////////////////////////////////////////////////////////////////////
-
-
-`timescale 1ns / 1ps
 
 module tb_bcd_counter;
     reg clk_100mhz;
@@ -59,7 +41,7 @@ module tb_bcd_counter;
             #10;
         end
         
-        $display("\n✓ Test Complete!\n");
+        $display("\n Test Completed\n");
         $finish;
     end
 
