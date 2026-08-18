@@ -11,7 +11,7 @@ module clock_divider (
             counter <= 0;
             clk_1hz <= 0;
         end else begin
-           if (counter == 99_999_999) begin 
+           if (counter == 99_999_999) begin
                 counter <= 0;   // Reset counter back to 0
                 clk_1hz <= ~clk_1hz; // Toggle the output (flip between 0 and 1)
             end else begin
